@@ -1,0 +1,14 @@
+datapizza-ai
+scikit-learn
+pandas
+sentence_transformers
+langchain>=0.1.0
+llama-index
+langchain-experimental>=0.0.50
+langchain-community>=0.0.20
+langchain-openai
+langchain-core>=0.1.0
+json-repair
+langchain-neo4j
+llama-index-graph-stores-neo4j
+llama-index-llms-langchain

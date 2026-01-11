@@ -1,0 +1,1200 @@
+=== Classification report ===
+                             precision    recall  f1-score   support    status  count
+
+                                  0.00      0.00      0.00         0        
+                 Ad-hominem       0.41      0.69      0.51        13    giallo  171
+        Appeal-to-authority       0.37      0.50      0.42        14    giallo  109
+          Appeal-to-emotion       0.71      0.74      0.72        74    verde 1140
+  Causal-oversimplification       0.36      0.89      0.52         9    giallo  74
+             Cherry-picking       0.14      0.25      0.18         4    rosso 61
+                      Doubt       0.62      0.52      0.57        29    verde 264
+Evading-the-burden-of-proof       0.22      0.31      0.26        16    rosso 246
+              False-analogy       0.33      0.15      0.21        13    giallo  135
+              False-dilemma       0.50      0.17      0.25         6    verde 45
+                Flag-waving       0.33      0.27      0.30        11    giallo 170
+       Hasty-generalization       0.52      0.60      0.56        20    verde 268
+            Loaded-language       0.54      0.77      0.63        56    verde 1220
+  Name-calling-or-labelling       0.75      0.77      0.76        35    verde 482
+                Red-herring       0.00      0.00      0.00         7    rosso 143
+             Slippery-slope       0.33      0.20      0.25         5    giallo  99
+                     Slogan       0.46      0.85      0.59        13    giallo  166
+                   Strawman       0.38      0.33      0.35         9    giallo  68
+Thought-terminating-cliches       0.00      0.00      0.00        14    rosso 147
+                  Vagueness       0.54      0.33      0.41        43    verde 796
+
+                  micro avg       0.49      0.53      0.51       413
+                  macro avg       0.33      0.36      0.33       413
+               weighted avg       0.48      0.53      0.49       413
+                samples avg       0.45      0.48      0.44       413
+
+
+status 0=data augmentation, 1= da capire, 2 = ok
+
+target,count,percent
+circular-reasoning,11,0.19
+
+
+su cui fare data augmentation:
+- Cherry-picking
+- Evading-the-burden-of-proof
+- Thought-terminating-cliches 
+- Red-herring
+
+
+
+                           precision    recall  f1-score   support
+
+                adhominem       0.60      0.60      0.60        15
+        appealtoauthority       0.00      0.00      0.00         5
+          appealtoemotion       0.64      0.69      0.67        39
+ causaloversimplification       0.38      0.60      0.46         5
+            cherrypicking       0.80      0.67      0.73         6
+                    doubt       0.62      0.33      0.43        15
+  evadingtheburdenofproof       0.67      0.64      0.65        22
+             falseanalogy       1.00      0.29      0.44         7
+             falsedilemma       0.00      0.00      0.00         3
+               flagwaving       0.88      0.54      0.67        13
+      hastygeneralization       0.42      0.36      0.38        14
+           loadedlanguage       0.58      0.84      0.69        37
+    namecallingorlabeling       0.00      0.00      0.00         0
+   namecallingorlabelling       0.75      0.55      0.63        22
+               redherring       1.00      0.33      0.50        15
+            slipperyslope       0.00      0.00      0.00         3
+                   slogan       0.50      1.00      0.67        11
+                 strawman       0.62      0.83      0.71         6
+thoughtterminatingcliches       0.00      0.00      0.00         4
+ thoughtterminatingcliché       0.00      0.00      0.00         0
+                vagueness       0.50      0.38      0.43        26
+
+                micro avg       0.57      0.56      0.57       268
+                macro avg       0.47      0.41      0.41       268
+             weighted avg       0.61      0.56      0.56       268
+              samples avg       0.56      0.57      0.54       268
+
+
+0)Suggerimenti: ---invasione, partiti 800 immigra
+---si sente spesso dire che l'hot
+---con la scusa della epidemia vo
+ Testo: aids, e' boom di migranti infetti nei centri profughi
+Predetto: {'vagueness', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling', 'hastygeneralization'}
+Reale: {'loadedlanguage', 'namecallingorlabelling', 'evadingtheburdenofproof'}
+
+Correttezza parziale: 0.3333
+------------------------
+
+
+1)Suggerimenti: ---l'#emergenzaclimatica non avve
+---l'unione europea, seguendo il 
+---basta bufale sul #clima #stopc
+ Testo: aderiamo alla mobilitazione per chiedere lo stato d'#emergenzaclimatica come è accaduto in regno unito con decisione del parlamento. dobbiamo batterci per salvare la terra ed il nostro futuro. un futuro sostenibile fatto du diritti per tutte e tutti. #temposcaduto #clima #2maggio
+Predetto: {'appealtoemotion', 'appealtoauthority'}
+Reale: {'slogan', 'appealtoemotion'}
+
+Correttezza parziale: 0.3333
+------------------------
+
+
+2)Suggerimenti: ---“quello che si fa ai #migranti
+---anche a me non fa piacere che 
+---ma la "cristiana" #giorgiamelo
+ Testo: monsignor viganò, dopo aver invitato cittadini e forze dell'ordine ad abbattere la dittatura sanitaria, sta attaccando la chiesa perché "accoglie i migranti e discrimina i non vaccinati" e ha ricordato che "solo cristo ci salva. non un siero creato con feti abortiti". 🤦🏻‍♂️
+Predetto: {'falsedilemma', 'slogan', 'evadingtheburdenofproof', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling'}
+Reale: {'evadingtheburdenofproof', 'vagueness', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling'}
+
+Correttezza parziale: 0.5714
+------------------------
+
+
+3)Suggerimenti: ---🇮🇹💧📰 "transizione ecologica: è
+---🇮🇹💧🇮🇹 al via presentazione lib
+---giornata mondiale dell'acqua /
+ Testo: 💧📖 #libro "acque d'italia" di #roma gargano, dg "sulla questione acqua si parla molto, ma si fa troppo poco. i consorzi fanno la loro parte ed a breve presenteranno un piano per bacini medio-piccoli, sostenibili e rispettosi della biodiversità" #14aprile
+Predetto: set()
+Reale: {'vagueness'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+4)Suggerimenti: ---domenica voterò perché propone
+---propone tassa di scopo? dicono
+---caro ministro della #transizio
+ Testo: voglio dire alle famiglie, alla politica, al corriere, al mondo produttivo che non vuol mettere soldi sulla scuola e quindi ha gioco nel dirla sicura, che un rilevatore di co2 costa quanto una settimana di babysitter e con un cosino tipo questo almeno si verifica il ricambio aria
+Predetto: {'doubt', 'hastygeneralization', 'vagueness'}
+Reale: {'loadedlanguage', 'falseanalogy', 'evadingtheburdenofproof', 'vagueness'}
+
+Correttezza parziale: 0.1667
+------------------------
+
+
+5)Suggerimenti: ---a furia di mutare il covid si 
+---ecco qui la parte de di ieri c
+---potete elettrificare tutte le 
+ Testo: pomeriggio a roma per fare un salto dal mitico marco apollonj di auto giapponese per scegliere la nuova auto... 😎 non potevo non valutare la #nissan #leaf 🔌 voi che ne dite? #electrifytheworld #zeroscuse #zeroemissioni
+Predetto: {'loadedlanguage', 'slogan'}
+Reale: {'slogan', 'loadedlanguage'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+6)Suggerimenti: ---in sintonia con il #greennewde
+---prima di votare pd o +europa r
+---l'unione europea, seguendo il 
+ Testo: a repubblica non hanno spiegato che #nextgenerationeu è centrato su #newgreendeal, che c'è una cosetta che si chiama #climatecrisis, e che la strada per la ripresa è la #greeneconomy. speriamo glielo ricordi lo stesso #draghi dato che lui almeno l'#europa l'ha frequentata
+Predetto: {'loadedlanguage'}
+Reale: {'evadingtheburdenofproof', 'vagueness', 'appealtoemotion', 'loadedlanguage', 'doubt'}
+
+Correttezza parziale: 0.2000
+------------------------
+
+
+7)Suggerimenti: ---basta. l'italia deve individua
+---crea sanità: “spesa sanitaria 
+---promuovi pensioni adeguate? di
+ Testo: l'italia è il paese ocse nel quale aumenterà di più il rapporto tra over 65 e persone in età da #lavoro, e già oggi siamo al secondo posto. chi pagherà le pensioni? i costi dell'assistenza e la spesa sanitaria? i (pochi) giovani di oggi e della prossima generazione.
+Predetto: {'causaloversimplification'}
+Reale: {'loadedlanguage', 'doubt'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+8)Suggerimenti: ---qui a #trieste tanti medici la
+---ma i milioni di plurivaccinati
+---fateci pagare i vaccini ma dat
+ Testo: il tribunale condanna il ministero della salute, che non paga... nonostante sia stato riconosciuto colpevole! oltre il danno da vaccino...la beffa! #vaccini #stragedistato
+Predetto: {'loadedlanguage', 'appealtoemotion', 'namecallingorlabeling'}
+Reale: {'loadedlanguage', 'namecallingorlabelling', 'thoughtterminatingcliches', 'vagueness'}
+
+Correttezza parziale: 0.1667
+------------------------
+
+
+9)Suggerimenti: ---l'#emergenzaclimatica non avve
+---la #crisiclimatica è adesso. a
+---e anche oggi l'italia piange d
+ Testo: #cop26 su clima si svolgerà "congiuntamente" in italia e gran bretagna... in effetti dopo aver bocciato mozione su #emergenzaclimatica farla solo in italia era ridicolo! #negazionisticlimatici #congiuntamentefregati
+Predetto: {'loadedlanguage', 'slogan', 'namecallingorlabeling'}
+Reale: {'redherring', 'namecallingorlabelling', 'appealtoemotion', 'loadedlanguage', 'causaloversimplification', 'doubt'}
+
+Correttezza parziale: 0.1250
+------------------------
+
+
+10)Suggerimenti: ---nonostante 3 vaccini sono purt
+---31 gradi alle 9:15 dell'anima 
+---ho fatto una doccia talmente c
+ Testo: home workout gambe 💪 - fate 10 min di riscaldamento globale circuito: -10 × squat jump -16 × affondi -15 × ponti -10 × affondi jump -6+6 stacchi mono (ultimo esercizio) fate tutti gli esercizi di seguito per 5…
+Predetto: set()
+Reale: {''}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+11)Suggerimenti: ---kyenge: gli italiani paghino l
+---se si desse il voto agli immig
+---però bisogna ammettere che ci 
+ Testo: kyenge: “immigrati devono votare ed essere eletti” gli immigrati devono pagare le tasse come tutti, devono rispettare le leggi come tutti, devono rispettare la religione come tutti, ma .... per fare prima, meglio che tornino nei loro paesi a far politica.
+Predetto: {'falsedilemma', 'redherring'}
+Reale: {'circularreasoning', 'falseanalogy', 'vagueness', 'namecallingorlabelling', 'adhominem', 'loadedlanguage', 'flagwaving'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+12)Suggerimenti: ---basta bufale sul #clima #stopc
+---🌍 oggi, la presenza di a #tori
+---#bastafalsepromesse! in piazza
+ Testo: #climatestrike #24settembre chi ha detto che il #clima non interessa più? la sfida climatica è la questione e la maggior parte delle cittadine e dei cittadini lo sa benissimo!
+Predetto: {'slogan', 'hastygeneralization', 'appealtoauthority'}
+Reale: {'loadedlanguage', 'hastygeneralization', 'vagueness', 'appealtoauthority'}
+
+Correttezza parziale: 0.4000
+------------------------
+
+
+13)Suggerimenti: ---#emissioniodorigene: molti cit
+---continua il mio impegno a favo
+---#italia5stelle ci siamo, vi as
+ Testo: #facciamoecoscuola, l'iniziativa del #m5s per promuovere progetti di sostenibilità ambientale nelle scuole di tutta #italia. contributi fino a 20.000 euro, presenta il tuo progetto! #puglia leggi qui:
+Predetto: {'slogan'}
+Reale: {'loadedlanguage', 'slogan'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+14)Suggerimenti: ---l'opera di oggi a è dedicata a
+---tre ragazzi -meno di 20 anni- 
+---#livorno accoglie i migranti. 
+ Testo: in corso le attività dei volontari della #crocerossa a #stromboli per fornire assistenza alla popolazione e supporto ai soccorsi. team cri pronti anche nei porti di lipari e vulcano per eventuali trasferimenti al pronto soccorso. #unitaliacheaiuta
+Predetto: {'slogan', 'flagwaving'}
+Reale: {'slogan', 'appealtoemotion'}
+
+Correttezza parziale: 0.3333
+------------------------
+
+
+15)Suggerimenti: ---“è l'una di notte e 80 bambini
+---#migranti naufragi senza sosta
+---la strage degli innocenti! un 
+ Testo: nessuno mette i figli su una barca a meno che l'acqua non sia più sicura della terra turchia. affonda barcone di persone migranti nel mar #egeo, morti 5 bambini e 4 donne. #balkanroute #restiamoumani
+Predetto: {'slogan', 'appealtoemotion'}
+Reale: {'slogan', 'hastygeneralization', 'appealtoemotion'}
+
+Correttezza parziale: 0.6667
+------------------------
+
+
+16)Suggerimenti: ---tutti coloro che pensavano che
+---“su 64mila sbarchi in un anno 
+---12.000 assunzioni nelle forze 
+ Testo: bene la proposta della ministra su regolarizzazione degli immigrati in agricoltura .e' cruciale per sconfiggere il caporalato e oggi e' fondamentale per la nostra agricoltura .
+Predetto: set()
+Reale: {'loadedlanguage', 'namecallingorlabelling', 'appealtoemotion'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+17)Suggerimenti: ---ecco qui la parte de di ieri c
+---oggi ho tenuto 3 lezioni sull'
+---#31agosto quando gli operai ha
+ Testo: un'alluvione mi ha forgiato nel carattere però il sorriso dei miei mi ha fatto crescere #mengonilive2019 staff
+Predetto: {'causaloversimplification'}
+Reale: {'loadedlanguage', 'appealtoemotion'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+18)Suggerimenti: ---cazzo. ho ordinato un baileys 
+---discutiamo di budget? ma il ca
+---vi ricordate quando cingolani 
+ Testo: bei tempi quando discutevamo se fosse opportuno farci pagare un centesimo il sacchetto biodegradabile al supermercato.... 😐
+Predetto: set()
+Reale: {'appealtoemotion'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+19)Suggerimenti: ---battute sul riscaldamento glob
+---ma se giletti non ha competenz
+---a tutti quei #moralisti da qua
+ Testo: oggi #salvini sul palco cosa sfoggerà? dopo i finti bambini di bibbiano, finte orecchie morsicate, finta quota100, finte #accise ridotte, finti #rimpatri, finti rubli e #49milioni, finti rosari madonne e santi cosa ci presenterà? il #capitanconiglio dal cilindro...
+Predetto: {'evadingtheburdenofproof', 'adhominem', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling'}
+Reale: {'slipperyslope', 'redherring', 'vagueness', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling', 'doubt'}
+
+Correttezza parziale: 0.3333
+------------------------
+
+
+20)Suggerimenti: ---mio nonno è emigrato negli usa
+---scusate ma chi è questo invasa
+---#morani il tricolore è nato da
+ Testo: mughini,non si permetta di paragonare gli emigrati italiani con i fancazzisti clandestini di oggi. mio nonno emigrò in germania, scavava le buche per i pali della luce,si faceva nel culo e non stava in albergo a scrocco si sciacqui la bocca quando parla dell'🇮🇹 #quartarepubblica
+Predetto: {'flagwaving', 'slogan', 'adhominem', 'loadedlanguage', 'namecallingorlabelling', 'hastygeneralization'}
+Reale: {'redherring', 'falseanalogy', 'vagueness', 'namecallingorlabelling', 'adhominem', 'appealtoemotion', 'loadedlanguage', 'flagwaving', 'hastygeneralization'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+21)Suggerimenti: ---l'#emergenzaclimatica non avve
+---vi dirò una parola che vi rovi
+---la transizione ecologica sarà 
+ Testo: tranquillo sgarbi. se fermiamo le rinnovabili e continuiamo con questa siccità avremo tutto un intero paese a secco e il paesaggio diventerà lunare. #sitornaalmedioevo #tesalutogreta
+Predetto: {'slipperyslope', 'loadedlanguage', 'appealtoemotion', 'slogan'}
+Reale: {'slipperyslope', 'slogan', 'loadedlanguage'}
+
+Correttezza parziale: 0.7500
+------------------------
+
+
+22)Suggerimenti: ---da ateo e blasfemo chiedo ai c
+---se vuoi che creda, dimostralo:
+---arrivare a calpestare il pane 
+ Testo: io non ci posso credere, rifugiatevi nelle chiese!
+Predetto: {'appealtoemotion'}
+Reale: {'vagueness', 'appealtoemotion'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+23)Suggerimenti: ---quindi #contebugiardo come tro
+---una piccola tassa sfocerà in u
+---l'occasione potrebbe esser que
+ Testo: dopo una distribuzione a pioggia di soldi, il governo necessita di liquidità e sta pensando ad "un contributo di solidarietà", depredando le pensioni e mettendo mano ai nostri risparmi con l'emissione di titoli di stato da acquistare e poi con un prelievo a sorpresa
+Predetto: {'loadedlanguage', 'causaloversimplification', 'evadingtheburdenofproof'}
+Reale: {'loadedlanguage', 'vagueness', 'evadingtheburdenofproof', 'appealtoemotion'}
+
+Correttezza parziale: 0.4000
+------------------------
+
+
+24)Suggerimenti: ---domenica voterò perché propone
+---su omotransfobia, legalizzazio
+---domani #24aprile finalmente sa
+ Testo: sono tra i candidati di alla camera per le elezioni del #25settembre. nel programma: matrimonio egualitario, cannabis legale, eutanasia legale, politiche per la sostenibilità ambientale e intergenerazionale, ius scholae e molto altro. più info:
+Predetto: {'vagueness'}
+Reale: {'flagwaving'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+25)Suggerimenti: ---troppo stanca per leggere anco
+---ogni estate alla prima pioggia
+---l'#emergenzaclimatica non avve
+ Testo: comunque senza twitter il 90 % di noi non saprebbe degli allagamenti a #venezia e a #matera visto che i telegiornali continuano a parlare della solita politica di merda.
+Predetto: {'loadedlanguage', 'namecallingorlabelling', 'evadingtheburdenofproof', 'hastygeneralization'}
+Reale: {'evadingtheburdenofproof', 'vagueness', 'loadedlanguage', 'causaloversimplification', 'hastygeneralization'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+26)Suggerimenti: ---anche io sono contrario all'ob
+---ancora una volta la scelta è s
+---faccio un favore la e al suo d
+ Testo: chi è contrario ai vaccini mi è simpatico perché è favorevole al suicidio.
+Predetto: {'loadedlanguage', 'adhominem', 'strawman', 'namecallingorlabelling'}
+Reale: {'vagueness', 'falseanalogy', 'appealtoemotion', 'hastygeneralization'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+27)Suggerimenti: ---volevo chiedere a quelli della
+---cosa avverrebbe se una persona
+---non ti fanno entrare al pronto
+ Testo: e' previsto l'obbligo di tampone negativo (anche se muniti di green pass) per entrare nei pronto soccorso. “salvi i casi di oggettiva impossibilità dovuta all'urgenza, valutati dal personale sanitario”. in quale altro paese è previsto questo schifo?
+Predetto: {'loadedlanguage', 'appealtoemotion'}
+Reale: {'loadedlanguage', 'doubt', 'appealtoemotion'}
+
+Correttezza parziale: 0.6667
+------------------------
+
+
+28)Suggerimenti: ---persino la democratica #kamala
+---nella ue tornano i muri antimi
+---🔴 #decretosicurezza: il govern
+ Testo: per la difesa dei confini e la lotta all'immigrazione incontrollata di massa rimarranno una priorità. difendiamo i confini #blocconavalesubito
+Predetto: {'loadedlanguage', 'slogan', 'flagwaving'}
+Reale: {'loadedlanguage', 'slogan', 'flagwaving', 'namecallingorlabelling'}
+
+Correttezza parziale: 0.7500
+------------------------
+
+
+29)Suggerimenti: ---l'#emergenzaclimatica non avve
+---basta bufale sul #clima #stopc
+---l'unione europea, seguendo il 
+ Testo: inizio a pensare che #greta #thunberg abbia ragione. il cambiamento climatico è una realtà e sta già provocando impatti e fenomeni di frequenza e intensità mai visti nella storia umana e con essi sofferenze. #dalpino all'#abete ... la natura impazzisce! #seriea #juventusinter 😂
+Predetto: {'loadedlanguage', 'redherring', 'appealtoemotion'}
+Reale: {'redherring', 'falseanalogy', 'vagueness', 'appealtoemotion', 'loadedlanguage'}
+
+Correttezza parziale: 0.6000
+------------------------
+
+
+30)Suggerimenti: ---immigrazione clandestina, gove
+---la camera ha appena approvato 
+---esce mauri (autore della rifor
+ Testo: #decretisicurezza le modifiche erano pronte da mesi, l'ultima bozza l'ho letta a luglio. il testo è stato congelato in attesa delle elezioni. intanto nei mesi della pandemia i dl salvini hanno continuato a fare parecchi danni (accoglienza). il coraggio in politica è un'altra cosa
+Predetto: {'thoughtterminatingcliché', 'evadingtheburdenofproof'}
+Reale: {'thoughtterminatingcliches', 'evadingtheburdenofproof', 'vagueness', 'appealtoemotion', 'appealtoauthority', 'loadedlanguage'}
+
+Correttezza parziale: 0.1429
+------------------------
+
+
+31)Suggerimenti: ---razzisti ....fassisti ..... le
+---cè la sensazione che la confus
+---continuano a parlare di migran
+ Testo: erdogan: "se mi criticate faccio arrivare in europa fiumi di migranti" salvini: " senza di me arrivano fiumi di migranti" entrambi usano i migranti per scatenare paure e odio
+Predetto: {'loadedlanguage', 'causaloversimplification', 'appealtoemotion'}
+Reale: {'slipperyslope', 'falseanalogy', 'namecallingorlabelling', 'appealtoemotion', 'loadedlanguage', 'causaloversimplification', 'hastygeneralization'}
+
+Correttezza parziale: 0.4286
+------------------------
+
+
+32)Suggerimenti: ---due turisti veneti non hanno a
+---gli stranieri sono più a risch
+---proprio non li sopporto più qu
+ Testo: che pena che mi fanno i lombardi e i veneti che scrivono che i #migranti arrivati stanotte a #lampedusa "potrebbero portare il #coronavirus in italia".
+Predetto: {'loadedlanguage', 'adhominem', 'appealtoemotion'}
+Reale: {'namecallingorlabelling', 'vagueness', 'hastygeneralization', 'appealtoemotion'}
+
+Correttezza parziale: 0.1667
+------------------------
+
+
+33)Suggerimenti: ---ora che i disastri climatici f
+---si sente spesso dire che l'hot
+---mi spiegate un mistero? com'è 
+ Testo: ma tra l'altro, che a minacciare la vostra sicurezza sia più il riscaldamento globale dei migranti lo sapete, vero?
+Predetto: {'loadedlanguage', 'evadingtheburdenofproof', 'vagueness'}
+Reale: {'redherring', 'vagueness', 'appealtoemotion'}
+
+Correttezza parziale: 0.2000
+------------------------
+
+
+34)Suggerimenti: ---per il passaggio a energia ed 
+---vlora, trent'anni fa: un gigan
+---#europa, #giovani, diritti, sv
+ Testo: a bologna una piazza di grande,solare,empatica e consapevole di poter essere "popolo in azione" (rosanvallon) giovani che lasciano e tornano,aree rurali in crisi demografica,migranti,mafia.meno male che non ci sarebbero contenuti.grazie per l'invito e avanti!
+Predetto: {'loadedlanguage', 'slogan', 'flagwaving'}
+Reale: {'loadedlanguage', 'vagueness', 'appealtoemotion', 'appealtoauthority'}
+
+Correttezza parziale: 0.1667
+------------------------
+
+
+35)Suggerimenti: ---giornata complessa che ha port
+---l'unione europea, seguendo il 
+---“serve uno sforzo globale che,
+ Testo: ho incontrato a roma la ministra francese per la transizione ecologica e solidale . grande intesa su clima, #cop26, #biodiversità, tutela del #mediterraneo e delle alpi e taglio emissioni. la francia sostiene il programma ambiente e clima del #g20 italiano.
+Predetto: set()
+Reale: {''}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+36)Suggerimenti: ---+++ in occasione del vi annive
+---•papa francesco il 29 settembr
+---nel giorno dell'immacolata e' 
+ Testo: questa mattina, nel lasciare santa marta poco prima delle 7, il #papa si è intrattenuto con circa 12 rifugiati iracheni accolti da e dalla cooperativa auxilium. il gruppo accompagnato dall'elemosiniere konrad krajewski
+Predetto: set()
+Reale: {''}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+37)Suggerimenti: ---e poi scopro che l'imbecillità
+---qualche anno fa ci siamo fatti
+---l'#emergenzaclimatica non avve
+ Testo: ecco,questo e' , non c'è' cambio #clima non c'è #siccità..tutta colpa dell'#ideologiaaaa dell'acqua intesa come #benecomune! sono davvero 😟 stupefacenti! e credo facciano danni come gli stupefacenti!
+Predetto: {'falseanalogy', 'adhominem', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling'}
+Reale: {'strawman', 'redherring', 'falseanalogy', 'vagueness', 'adhominem', 'appealtoemotion', 'loadedlanguage', 'hastygeneralization'}
+
+Correttezza parziale: 0.4444
+------------------------
+
+
+38)Suggerimenti: ---parte la raccolta firme per un
+---la transizione ecologica sarà 
+---la #zonaverde è il climate str
+ Testo: la marcia popolare #notav in #valsusa è appena iniziata. migliaia di persone hanno raggiunto la valle per ribadire la contrarietà al #tav. la transizione ecologica non può passare per infrastrutture invasive e inquinanti.
+Predetto: {'slogan', 'loadedlanguage', 'flagwaving'}
+Reale: {'loadedlanguage', 'namecallingorlabelling', 'vagueness', 'flagwaving'}
+
+Correttezza parziale: 0.4000
+------------------------
+
+
+39)Suggerimenti: ---pensieri sparsi dopo 3 mesi di
+---l'emozione del poter tornare a
+---ieri sera, dopo aver comprato 
+ Testo: ho fatto lavare l'auto. dopo tre mesi di siccità, sono certo che pioverà presto.
+Predetto: {'causaloversimplification'}
+Reale: {'causaloversimplification'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+40)Suggerimenti: ---a #drittoerovescio una rifugia
+---l'italia è quel paese dove la 
+---tutti si stracciano le vesti p
+ Testo: stasera al bar: rifugiato ucraino: ma voi italiani che ci consigliate di lasciar perdere la crimea e donbass perché non cedete sicilia e lombardia? il barista: perché in sicilia e in lombardia non vivono cittadini che parlano la lingua russa e si sentono più russi che ucraini.
+Predetto: {'falseanalogy', 'redherring'}
+Reale: {'redherring', 'evadingtheburdenofproof', 'vagueness', 'falseanalogy', 'hastygeneralization'}
+
+Correttezza parziale: 0.4000
+------------------------
+
+
+41)Suggerimenti: ---conte impugna ordinanza di #mu
+---a palazzo chigi per discutere 
+---altra commedia dell'assurdo: d
+ Testo: doloso!!! pura mano siciliana doc!!! guai a voi a dire che il problema in sicilia è l'invasione di migranti...ridicoli!! il problema sono i siciliani e chi li governa! #musumeci vergognati!
+Predetto: {'adhominem', 'appealtoemotion', 'loadedlanguage', 'causaloversimplification', 'namecallingorlabelling', 'hastygeneralization'}
+Reale: {'vagueness', 'adhominem', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling', 'hastygeneralization'}
+
+Correttezza parziale: 0.7143
+------------------------
+
+
+42)Suggerimenti: ---#giorgetti nessuno va dal medi
+---il #diritto di #nonabortire es
+---hanno distrutto la medicina te
+ Testo: nel molise sono tutti obiettori i ginecologi tranne uno. l'unico medico arbortista va in pensione. a proposito di “dittature sanitarie” “scenari orwelliani” a giorni alterni
+Predetto: {'loadedlanguage', 'hastygeneralization', 'vagueness'}
+Reale: {'slipperyslope', 'cherrypicking', 'evadingtheburdenofproof', 'loadedlanguage', 'namecallingorlabelling', 'hastygeneralization'}
+
+Correttezza parziale: 0.2857
+------------------------
+
+
+43)Suggerimenti: ---l'emergenza continua diventa l
+---ci hanno chiuso in casa per 2 
+---se dopo 2 anni di pandemia l'e
+ Testo: siete consapevoli tutti cosa succede durante lo stato d'emergenza, vero? decreti legge uno dopo l'altro approvati in un batter d'occhio. e questa volta non basterà il vaccino che avete ricevuto, si passa alla proprietà privata e alla privazione dei beni primari. - i complottisti
+Predetto: {'slipperyslope', 'evadingtheburdenofproof', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling'}
+Reale: {'slipperyslope', 'redherring', 'evadingtheburdenofproof', 'vagueness', 'loadedlanguage', 'flagwaving', 'doubt'}
+
+Correttezza parziale: 0.3333
+------------------------
+
+
+44)Suggerimenti: ---ieri, come ogni venerdì, siamo
+---#fridayforfuture i ragazzi che
+---#fridaysforfuture tutti insiem
+ Testo: i centri sociali del nordest questa mattina bloccano l'ingresso della raffineria #eni a #venezia contro lo sfruttamento dei territori e delle risorse, contro questo sistema non più sostenibile #climate change #climateemergency
+Predetto: {'loadedlanguage', 'slogan', 'appealtoemotion'}
+Reale: {'vagueness'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+45)Suggerimenti: ---anche io sono contrario all'ob
+---dopo quello francese il govern
+---caro #novax che ti appelli all
+ Testo: non esiste nella costituzione italiana la possibilità di obbligo a un vaccino sperimentale. il governo può chiedere agli italiani una scelta razionale e ragionevole che comporti il rischio di inocularsì un vaccino ma non puo' imporre un atto di fede a nessuno
+Predetto: {'loadedlanguage', 'evadingtheburdenofproof'}
+Reale: {'redherring', 'evadingtheburdenofproof', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling'}
+
+Correttezza parziale: 0.4000
+------------------------
+
+
+46)Suggerimenti: ---ieri odiavamo gli immigrati ch
+---tutti si stracciano le vesti p
+---stanno entrando un mare di imm
+ Testo: va a finire che gli stronzi, i poco coraggiosi e gli insensibili siamo noi: emigrati per dover lavorare. 🤡 bocca mia, taci.
+Predetto: {'loadedlanguage', 'namecallingorlabelling', 'appealtoemotion'}
+Reale: {'namecallingorlabelling', 'appealtoemotion', 'loadedlanguage', 'flagwaving', 'hastygeneralization'}
+
+Correttezza parziale: 0.6000
+------------------------
+
+
+47)Suggerimenti: ---la sintesi di non servono altr
+---lo sfruttamento dei #migranti 
+---“su 64mila sbarchi in un anno 
+ Testo: condivido articolo odierno di sulla vergogna di come trattiamo i #migranti sulla “#rottabalcanica” perché non si può dire meglio
+Predetto: {'loadedlanguage', 'appealtoauthority'}
+Reale: {'loadedlanguage', 'circularreasoning', 'appealtoemotion', 'appealtoauthority'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+48)Suggerimenti: ---mio nonno è emigrato negli usa
+---stanno entrando un mare di imm
+---“è l'una di notte e 80 bambini
+ Testo: troppi i migranti che muoiono o finiscono schiavi nei campi o a prostituirsi e questo perché esistono tanti #soumahoro senza scrupoli e tanti sussidi senza senso. accogliere solo chi possiamo tutelare e dare un futuro dignitoso altrimenti siamo complici di una tratta umana.
+Predetto: {'falsedilemma', 'evadingtheburdenofproof', 'namecallingorlabelling', 'appealtoemotion', 'loadedlanguage', 'causaloversimplification', 'hastygeneralization'}
+Reale: {'falsedilemma', 'redherring', 'evadingtheburdenofproof', 'vagueness', 'namecallingorlabelling', 'adhominem', 'appealtoemotion', 'loadedlanguage', 'causaloversimplification'}
+
+Correttezza parziale: 0.6000
+------------------------
+
+
+49)Suggerimenti: ---il governo italiano sbarca da 
+---l'operazione #openarms testimo
+---io mi domando e domando: da qu
+ Testo: condizioni igienico sanitarie pessime sulla #openarms. ecco l'esito dell'ispezione dei medici saliti a bordo. gli antibiotici a bordo sono terminati e molti, che presentano ferite da armi da fuoco malcurate, presentano evidenti infezioni. #lampedusa
+Predetto: {'loadedlanguage', 'appealtoemotion'}
+Reale: {'appealtoemotion', 'appealtoauthority'}
+
+Correttezza parziale: 0.3333
+------------------------
+
+
+50)Suggerimenti: ---immigrazione clandestina, gove
+---1) se salvini non fa sbarcare 
+---hanno rotto le palle mesi, ann
+ Testo: cena al mare. tavolo affianco. - i magistrati sono merde, attaccano salvini perché vuole liberare l'italia dai comunisti e dai migranti. nel nostro tavolo due magistrati. io: come fate a non dire niente? - si chiama democrazia. noi applichiamo le leggi, non ascoltiamo opinioni.
+Predetto: {'thoughtterminatingcliches', 'flagwaving', 'evadingtheburdenofproof', 'namecallingorlabelling', 'adhominem', 'loadedlanguage', 'causaloversimplification', 'doubt'}
+Reale: {'falsedilemma', 'thoughtterminatingcliches', 'vagueness', 'namecallingorlabelling', 'adhominem', 'appealtoemotion', 'loadedlanguage', 'causaloversimplification', 'hastygeneralization'}
+
+Correttezza parziale: 0.4167
+------------------------
+
+
+51)Suggerimenti: ---negativo. ringrazio la scienza
+---c'è chi fa il gradasso e chi s
+---programma di domani: -consegna
+ Testo: terminata l'avventura dei 2 mesi di lavoro in solidarietà, mi scrive una signora che avevo portato tre volte per la chemio in ospedale: “totale remissione della malattia”. #bologna5 ringrazia tutti coloro che ha aiutato perchè hanno contribuito a creare un karma che... ❤️💪
+Predetto: {'appealtoemotion'}
+Reale: {'loadedlanguage', 'vagueness', 'appealtoemotion'}
+
+Correttezza parziale: 0.3333
+------------------------
+
+
+52)Suggerimenti: ---mai dire mai nella vita. piena
+---ma io dico,gli operatori sanit
+---il fa un miracolo in piena pan
+ Testo: nel bolognese c'è l'unica azienda italiana che produce ventilatori polmonari che servono nei reparti di t.i.negli ospedali. da giorni tecnici e operai sono al lavoro per aumentare la produzione. non esistono più orari, weekend e notti. anche di tutti loro ci dovremo ricordare.
+Predetto: set()
+Reale: {'appealtoemotion'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+53)Suggerimenti: ---italiano violenta immigrata. n
+---#meloni a #bersagliomobile: "s
+---ha fatto campagna elettorale s
+ Testo: leggo che giorgia meloni è indignata per la morte orribile di questa ragazza. però se provava a fuggire in italia l'avrebbe considerata una immigrata che invade il nostro paese da bloccare non essendo ariana come gli ucraini #ipocrisia
+Predetto: {'loadedlanguage', 'evadingtheburdenofproof', 'appealtoemotion', 'namecallingorlabeling'}
+Reale: {'vagueness', 'namecallingorlabelling', 'appealtoemotion', 'loadedlanguage', 'flagwaving', 'hastygeneralization'}
+
+Correttezza parziale: 0.2500
+------------------------
+
+
+54)Suggerimenti: ---emiliano deve dimettersi per c
+---togliersi la mascherina in par
+---giletti mostra la mappa del di
+ Testo: prima lopalco in puglia con emiliano, poi crisanti alle politiche con il pd, ora pregliasco in lombardia con majorino. i virologi scendono in campo guarda caso con la sinistra ma guai dire che molte misure prese durante la pandemia avvennero per ragioni politiche e non sanitarie.
+Predetto: {'cherrypicking', 'evadingtheburdenofproof', 'hastygeneralization'}
+Reale: {'loadedlanguage', 'namecallingorlabelling', 'hastygeneralization', 'vagueness'}
+
+Correttezza parziale: 0.1667
+------------------------
+
+
+55)Suggerimenti: ---a milano arriva una famiglia a
+---con il #conte2 si torna al “pa
+---la #svezia senza #lockdown è u
+ Testo: la civile svezia è tra i paesi europei che hanno rimpatriato sistematicamente gli afghani negli ultimi anni. lo consideravano un “paese sicuro” #propagandalive
+Predetto: {'loadedlanguage', 'namecallingorlabelling', 'vagueness'}
+Reale: {'loadedlanguage', 'namecallingorlabelling', 'evadingtheburdenofproof', 'vagueness'}
+
+Correttezza parziale: 0.7500
+------------------------
+
+
+56)Suggerimenti: ---continuano a parlare di migran
+---avete notato che questi ultimi
+---hanno rotto le palle mesi, ann
+ Testo: #rogerwaters è il musicista più pagato al mondo, con un fatturato stimato di 96 milioni dollari, e fa la morale agli italiani sui migranti : "dovete accoglierli, è gente disperata". e salvini? "per fortuna che se n'è andato" i ricchi, sono sempre accoglienti col culo degli altri.
+Predetto: {'loadedlanguage', 'adhominem', 'hastygeneralization', 'redherring'}
+Reale: {'thoughtterminatingcliches', 'flagwaving', 'redherring', 'evadingtheburdenofproof', 'adhominem', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling', 'hastygeneralization'}
+
+Correttezza parziale: 0.4444
+------------------------
+
+
+57)Suggerimenti: ---#bastafalsepromesse! in piazza
+---centinaia di ragazzi hanno ris
+---la fermata metro laurentina è 
+ Testo: 50.000 persone in piazza a milano con greta e contro il summit del bla-bla-bla. #stopblablabla #climateaction #climatecrisis #precop26
+Predetto: {'loadedlanguage', 'slogan', 'namecallingorlabelling'}
+Reale: {'slogan', 'vagueness', 'namecallingorlabelling', 'loadedlanguage', 'flagwaving'}
+
+Correttezza parziale: 0.6000
+------------------------
+
+
+58)Suggerimenti: ---#fridaysforfuture tutti insiem
+---#fridaysforfuture forza! #15ma
+---la fermata metro laurentina è 
+ Testo: questa è la situazione a napoli oggi: il corteo va da via toledo a piazza garibaldi (sono 4 km). studenti, insegnanti e sigle sono tutti in strada per #fridaysforfuture ❤️ #climatestrike
+Predetto: {'slogan', 'flagwaving', 'appealtoemotion'}
+Reale: {'flagwaving', 'hastygeneralization', 'appealtoemotion'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+59)Suggerimenti: ---12.000 assunzioni nelle forze 
+---continuano a parlare di migran
+---“su 64mila sbarchi in un anno 
+ Testo: ⚠️notizia del primo maggio: la francia 🇫🇷: accordo tra tre ministeri per garantire stipendi adeguati in agricoltura. l'italia 🇮🇹: il ministro bellanova (italia viva) lavora per regolarizzare 600.000 immigrati clandestini per usarli in agricoltura.
+Predetto: {'loadedlanguage', 'namecallingorlabelling', 'falseanalogy'}
+Reale: {'evadingtheburdenofproof', 'falseanalogy', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling'}
+
+Correttezza parziale: 0.6000
+------------------------
+
+
+60)Suggerimenti: ---gli atleti rifugiati sono un s
+---l'ho detto e lo ribadisco. per
+---#monti nominato presidente del
+ Testo: 🥇 olimpiadi 2021 🥇 mondiali indoor 2022 🥇 europei 2022 marcell #jacobs è nell'olimpo dell'#atletica. #monaco2022 #munich2022
+Predetto: set()
+Reale: {''}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+61)Suggerimenti: ---anche il comune di bosa per la
+---la #crisiclimatica è adesso. a
+---l'#emergenzaclimatica non avve
+ Testo: in #sardegna sindaci e #italianostra sempre contro #eolico e i “signori del vento” (con l'unione sarda per il #carbone che fa da megafono) senza capire che di boschi non ce ne saranno più se non si arresta la #climatecrisis
+Predetto: {'loadedlanguage', 'appealtoemotion', 'namecallingorlabelling', 'vagueness'}
+Reale: {'slipperyslope', 'redherring', 'vagueness', 'loadedlanguage', 'namecallingorlabelling'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+62)Suggerimenti: ---mai dire mai nella vita. piena
+---“uccisi malati in terapia inte
+---dovremo usare paziente sapienz
+ Testo: ma l'ha detto davvero? dico, davvero gallera ha detto che ringrazia i privati “perché hanno aperto le loro terapie intensive e le loro stanze lussuose ai pazienti ordinari”? tralasciando le stanze “lussuose”, ma davvero, secondo gallera, esistono pazienti di diverse categorie?
+Predetto: {'doubt', 'vagueness'}
+Reale: {'loadedlanguage', 'doubt', 'appealtoemotion'}
+
+Correttezza parziale: 0.2500
+------------------------
+
+
+63)Suggerimenti: ---#fridaysforfuture ho voluto sa
+---se il paese somigliasse a ques
+---sperate che noi giovani faremo
+ Testo: com'era? “l'#ambiente non interessa a nessuno...i #giovani sono #menefreghisti!” oh ridillo! questa piazza è bellissima, grazie 💚 #fridaysforfuture #climatechange #strikeforclimate
+Predetto: {'namecallingorlabelling', 'hastygeneralization'}
+Reale: {'strawman', 'slogan', 'namecallingorlabelling', 'appealtoemotion', 'loadedlanguage', 'flagwaving', 'doubt', 'hastygeneralization'}
+
+Correttezza parziale: 0.2500
+------------------------
+
+
+64)Suggerimenti: ---coronavirus, al via allo spall
+---finalmente due buone notizie: 
+---l'istituto #spallanzani di rom
+ Testo: il vaccino per il colera è stato trovato. quello del corona virus è in fase di studio. ma di quello per l'idiozia non ci sono ancora tracce.#coronarvirusitalia
+Predetto: {'thoughtterminatingcliché', 'adhominem', 'namecallingorlabelling'}
+Reale: {'loadedlanguage', 'redherring', 'falseanalogy', 'appealtoemotion'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+65)Suggerimenti: ---cazzo. ho ordinato un baileys 
+---. oltre la parola transizione 
+---il senato ha approvato definit
+ Testo: 4 anni fa, oggi, il problema principale del paese erano i sacchetti biodegradabili a 0,05 centesimi. compresa la bufala della cugina di che li produceva. eravamo felici. e non lo sapevamo.
+Predetto: {'cherrypicking', 'thoughtterminatingcliché', 'evadingtheburdenofproof'}
+Reale: {'cherrypicking', 'thoughtterminatingcliches', 'evadingtheburdenofproof', 'appealtoemotion', 'loadedlanguage', 'hastygeneralization'}
+
+Correttezza parziale: 0.2857
+------------------------
+
+
+66)Suggerimenti: ---🌡️💧osservatorio è allarme sul 
+---ecco qui la parte de di ieri c
+---la dora, affluente del po, 22 
+ Testo: che dio ce la mandi buona!!! #emiliaromagna #esondazione #panaro #modena
+Predetto: {'appealtoemotion'}
+Reale: {'loadedlanguage', 'appealtoemotion'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+67)Suggerimenti: ---una preghiera accorata a tutti
+---stanno entrando un mare di imm
+---mio nonno è emigrato negli usa
+ Testo: non capisco perché ci sia timore a parlare dell'africa e dei danni di un neocolonialismo, ormai sino/russo/occidentale, che è una delle cause della povertà e delle migrazioni. perché limitarsi a dividersi su come gestire le conseguenze senza occuparsi di un problema alla radice?
+Predetto: {'loadedlanguage', 'causaloversimplification'}
+Reale: {'vagueness', 'appealtoemotion', 'loadedlanguage', 'namecallingorlabelling', 'doubt'}
+
+Correttezza parziale: 0.1667
+------------------------
+
+
+68)Suggerimenti: ---oggi 12 luglio compio 60 anni.
+---6 vaccini in due. tamponati e 
+---negativo. ringrazio la scienza
+ Testo: mio suocero, sono 14 anni che vive con noi, nonostante le sue serie patologie ed i vari ricoveri ospedalieri (dato sempre in fin di vita dai dottori) in questi 2 anni, resiste e festeggia il suo 90 esimo compleanno ❤️. dimenticavo non è vaxxinato contro il covid-19 😜
+Predetto: {'cherrypicking', 'appealtoemotion'}
+Reale: {'loadedlanguage', 'cherrypicking', 'appealtoemotion'}
+
+Correttezza parziale: 0.6667
+------------------------
+
+
+69)Suggerimenti: ---“il #covid_19 non è niente di 
+---due amici 40enni a casa da 4 g
+---ma i milioni di plurivaccinati
+ Testo: vaffanculo al 2020 e vaffanculo a tutti i negazionisti del cazzo,compreso barillari. mio cugino, dopo un mese di terapia intensiva, nulla ha funzionato, è morto per il covid.....il virus lo ha mangiato dentro,è entrato in setticemia. venitemi a sparare le vostre cazzate,stronzi
+Predetto: {'loadedlanguage', 'adhominem', 'appealtoemotion', 'namecallingorlabeling'}
+Reale: {'loadedlanguage', 'adhominem', 'appealtoemotion', 'namecallingorlabelling'}
+
+Correttezza parziale: 0.6000
+------------------------
+
+
+70)Suggerimenti: ---programma di domani: -consegna
+---ho promesso a un amico che ogg
+---domani e fino a giovedì ne avr
+ Testo: mi hanno appena telefono per confermare la preospedalizzazione. lunedì alle 7.45 e ne avrò per gran parte della giornata. 2 libri da finire ed uno da iniziare e poi qualche nota nel cell da sistemare. basterà tutto questo a tenermi compagnia? ❤️
+Predetto: set()
+Reale: {''}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+71)Suggerimenti: ---#migranti - sbarcano qui; poi 
+---altra commedia dell'assurdo: d
+---ricevo direttamente da un raga
+ Testo: dallalgeria gas e migranti.
+Predetto: set()
+Reale: {'falseanalogy'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+72)Suggerimenti: ---a chioggia, i veci seduti dava
+---il cambiamento climatico è una
+---qualche anno fa ci siamo fatti
+ Testo: gli effetti del cambiamento climatico: a bologna abbondanti grandinate di cocktail.
+Predetto: {'causaloversimplification', 'strawman'}
+Reale: {'loadedlanguage', 'causaloversimplification'}
+
+Correttezza parziale: 0.3333
+------------------------
+
+
+73)Suggerimenti: ---kyenge: gli italiani paghino l
+---la colpa di è stata una sola, 
+---“su 64mila sbarchi in un anno 
+ Testo: “prima ci hanno fatto votare, poi ci hanno ripreso i soldi”, la furia dei pensionati contro il conguaglio gialloverde. però vorrei dire: era scritto nella manovra di dicembre, che è legge. ve lo si è ripetuto ogni giorno. perché li avete votati? per 47 migranti?
+Predetto: {'loadedlanguage', 'falsedilemma', 'appealtoemotion'}
+Reale: {'evadingtheburdenofproof', 'vagueness', 'namecallingorlabelling', 'loadedlanguage', 'causaloversimplification', 'doubt', 'hastygeneralization'}
+
+Correttezza parziale: 0.1111
+------------------------
+
+
+74)Suggerimenti: ---basta foto ospedaliere. dopo t
+---milano, 23.12.19 grazie alla g
+---un anno fa andava in scena la 
+ Testo: 25.12.21 caro papà, questa foto è per i tanti amici che mi chiedono sempre di te. il tuo natale 2020 fu in terapia intensiva e pure oltre la linea della vita durante i 114 giorni di ospedali. e il miracolo è che quest'anno sono qui a infilarti 'el capelin de l'inter!' 💪
+Predetto: {'loadedlanguage', 'appealtoemotion'}
+Reale: {''}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+75)Suggerimenti: ---la proposta prevede l'emission
+---il costo medio all'emissione d
+---non sarà merito di #draghi se 
+ Testo: a loda lo spirito patriottico degli italiani per il successo dell'emissione di btp all'1,4% e ribadisce il no al mes allo 0,1%.peccato che non li hanno sottoscritti solo gli italiani e che gli interessi saranno pagati con le tasse degli italiani
+Predetto: {'flagwaving'}
+Reale: {'loadedlanguage', 'flagwaving', 'evadingtheburdenofproof', 'appealtoemotion'}
+
+Correttezza parziale: 0.2500
+------------------------
+
+
+76)Suggerimenti: ---la camera ha appena approvato 
+---153 favorevoli 2 contrari 4 as
+---buongiorno amici. da oggi, in 
+ Testo: la maggioranza approva alla camera il "dl clandestini" ovvero, l'apertura di fatto dei confini all'immigrazione economica. i permessi umanitari saranno infatti concessi anche per generiche violazioni della propria vita privata e saranno poi convertibili in permessi di lavoro...
+Predetto: {'evadingtheburdenofproof', 'vagueness', 'namecallingorlabelling', 'loadedlanguage', 'causaloversimplification'}
+Reale: {'', 'loadedlanguage', 'namecallingorlabelling', 'vagueness'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+77)Suggerimenti: ---casa thunberg - da il fatto qu
+---sbarcati i migranti - da il fa
+---il dibattito è sul clima; inta
+ Testo: dalla svezia con calore - la mia vignetta per il fatto quotidiano oggi in edicola! #roghi #lucifero #caldo #aspromonte #greta #climatechange #riscaldamentoglobale #fumettiitaliani #vignetta #fumetto #memeitaliani #umorismo #satira #humor #natangelo
+Predetto: set()
+Reale: {''}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+78)Suggerimenti: ---non è colpa mia se non ci sono
+---ricapitolando: -l'inquinamento
+---battute sul riscaldamento glob
+ Testo: è colpa tua lo scioglimento dei ghiacciai. è colpa tua la povertà nel mondo. è colpa tua la fame in africa. tutto è colpa tua! #isola #awed
+Predetto: {'thoughtterminatingcliché', 'causaloversimplification', 'appealtoemotion'}
+Reale: {'vagueness', 'adhominem', 'appealtoemotion', 'causaloversimplification', 'hastygeneralization'}
+
+Correttezza parziale: 0.3333
+------------------------
+
+
+79)Suggerimenti: ---in 10 anni tagliati 200 ospeda
+---all'ospedale di cairo montenot
+---stop a #listedattesa infinite 
+ Testo: sono partiti con un ospedale in fiera che doveva avere 600 posti letto. poi sono scesi a 300 . è tornato bertolaso i posti sono scesi a 250 . ieri hanno fatto l'inaugurazione per 25 posti letto . è vero o è una fake ?c'erano tanti cojoni vicini vicini per 25 posti letto?😳😷🙄
+Predetto: {'adhominem', 'appealtoemotion', 'loadedlanguage', 'doubt', 'namecallingorlabeling'}
+Reale: {'falsedilemma', 'evadingtheburdenofproof', 'vagueness', 'appealtoemotion', 'loadedlanguage', 'doubt'}
+
+Correttezza parziale: 0.3750
+------------------------
+
+
+80)Suggerimenti: ---ecco la strada x andare a casa
+---🌡️💧osservatorio è allarme sul 
+---impressioni d'acqua, che non c
+ Testo: mi sono svegliata con la paura addosso stamattina, mezza genova è sott'acqua, ci sono stati esondazioni di fiumi, e diversi allagamenti..
+Predetto: {'loadedlanguage', 'appealtoemotion'}
+Reale: {'vagueness', 'appealtoemotion'}
+
+Correttezza parziale: 0.3333
+------------------------
+
+
+81)Suggerimenti: ---negli ultimi anni la regione h
+---il pil è cresciuto nell'ultimo
+---si mostra una tendenza positiv
+ Testo: le aziende locali hanno esportato di più quest'anno; quindi la politica commerciale è un successo, senza considerare la contrazione interna.
+Predetto: {'cherrypicking', 'causaloversimplification'}
+Reale: {'cherrypicking'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+82)Suggerimenti: ---si riportano solo i casi estre
+---mostra solo dati di un campion
+---si limita l'analisi a casi fav
+ Testo: mostra la media positiva ma non la distribuzione che include molti casi medi.
+Predetto: {'cherrypicking', 'vagueness'}
+Reale: {'cherrypicking'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+83)Suggerimenti: ---l'eccezione diventa regola: un
+---se si tollera una norma eccezi
+---se affermi qualcosa, devi dimo
+ Testo: mostra l'eccezione che conferma la regola.
+Predetto: {'thoughtterminatingcliché'}
+Reale: {'cherrypicking'}
+
+Correttezza parziale: 0.0000
+------------------------
+
+
+84)Suggerimenti: ---la tua affermazione è verosimi
+---senza prove, la tua affermazio
+---se non hai prove, la tua affer
+ Testo: la tua teoria è solo un'opinione; chiedi agli altri di dimostrare il contrario.
+Predetto: {'thoughtterminatingcliché', 'evadingtheburdenofproof'}
+Reale: {'evadingtheburdenofproof'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+85)Suggerimenti: ---se esiste una prova, fornirla 
+---l'assenza di prove non basta: 
+---se qualcuno dubita, deve forni
+ Testo: non posso accettare questa tesi senza prove; ma non è mio mestiere fornire le prove.
+Predetto: {'evadingtheburdenofproof'}
+Reale: {'evadingtheburdenofproof'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+86)Suggerimenti: ---l'assenza di evidenze dimostra
+---se qualcuno dubita, deve forni
+---se vuoi che creda, dimostralo:
+ Testo: non è mio compito dimostrare l'inesistenza: dimostralo se vuoi convincermi.
+Predetto: {'evadingtheburdenofproof'}
+Reale: {'evadingtheburdenofproof'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+87)Suggerimenti: ---la discussione è sull'istruzio
+---la discussione è sul debito; m
+---parliamo di tasse? sarebbe uti
+ Testo: si parla di scuola? sarebbe rilevante, ma oramai tutto gira intorno alla nuova serie tv.
+Predetto: {'redherring'}
+Reale: {'redherring'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+88)Suggerimenti: ---parliamo di bilanci? a proposi
+---finalmente si ritorna a parlar
+---c'è la “politica” delle stanze
+ Testo: la politica parla di diritti; nel frattempo la partita di ieri ha abolito la noia.
+Predetto: {'redherring'}
+Reale: {'redherring'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+89)Suggerimenti: ---stiamo discutendo di tasse? ma
+---parliamo di tasse, ma la playl
+---parliamo di tasse? sarebbe uti
+ Testo: parliamo di tasse; ma la pioggia di ieri è più interessante.
+Predetto: {'redherring'}
+Reale: {'redherring'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+90)Suggerimenti: ---il tema è la sanità? comunque,
+---parliamo di sanità; ma avete n
+---quando siamo nati, pochi mesi 
+ Testo: il tema è la sanità; intanto la moda si è imposta.
+Predetto: {'redherring'}
+Reale: {'redherring'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+91)Suggerimenti: ---chiedi incentivi alle pmi? dic
+---propone tassa di scopo? dicono
+---chiedi tasse ecologiche? dicon
+ Testo: proponi tasse sui grandi patrimoni? dicono che vuoi strangolare le aziende e soffocare l'innovazione.
+Predetto: {'loadedlanguage', 'strawman'}
+Reale: {'strawman'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+92)Suggerimenti: ---chiedi autonomia regionale sul
+---chiedi referendum su leggi nuo
+---chiedi un'europa più forte? di
+ Testo: chiedi autonomia locale? dicono che vuoi spezzare l'unità nazionale.
+Predetto: {'strawman'}
+Reale: {'strawman'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+93)Suggerimenti: ---proponi tagli mirati? dicono c
+---chiedi sanità pubblica univers
+---promuovi welfare mirato? dicon
+ Testo: chiedi investimenti in sanità mentale? dicono che vuoi punire chi è più fragile.
+Predetto: {'strawman'}
+Reale: {'strawman'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+94)Suggerimenti: ---sostieni sicurezza interna più
+---sostieni regole sui media digi
+---chiedi servizi pubblici miglio
+ Testo: chiedi protezione dati rigorosa? dicono che vuoi vietare l'uso della tecnologia.
+Predetto: {'strawman'}
+Reale: {'strawman'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+95)Suggerimenti: ---proponi tagli mirati? dicono c
+---sostieni sicurezza interna più
+---promuovi welfare mirato? dicon
+ Testo: dici sì a infrastrutture moderne? dicono che vuoi indebitare il paese e tagliare libertà.
+Predetto: {'strawman'}
+Reale: {'strawman'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+96)Suggerimenti: ---chiedi controllo dei conti sta
+---sostieni regole sui media digi
+---sostieni reddito di cittadinan
+ Testo: sostieni digitalizzazione pa? dicono che vuoi mettere a tacere i cittadini.
+Predetto: {'loadedlanguage', 'strawman'}
+Reale: {'strawman'}
+
+Correttezza parziale: 0.5000
+------------------------
+
+
+97)Suggerimenti: ---chiedi incentivi per startup? 
+---sostieni reddito di cittadinan
+---chiedi controlli sull'immigraz
+ Testo: chiedi immigrazione basata sul merito? dicono che vuoi privilegiare i ricchi.
+Predetto: {'strawman'}
+Reale: {'strawman'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+
+98)Suggerimenti: ---l'eccezione diventa regola: un
+---se si concede questa eccezione
+---se si tollera una norma eccezi
+ Testo: se cede su una regola, la prossima volta si cede su due, finché nulla resta solo.
+Predetto: {'slipperyslope'}
+Reale: {'slipperyslope'}
+
+Correttezza parziale: 1.0000
+------------------------
+
+Micro Precision: 0.6552
+Micro Recall:    0.4510
+Micro F1-Score:  0.5343
+Macro Precision: 0.5707
+Macro Recall:    0.3830
+Macro F1-Score:  0.4283
+
+=== Classification report ===
+                           precision    recall  f1-score   support
+
+                                0.00      0.00      0.00         8
+                adhominem       0.55      0.67      0.60         9
+        appealtoauthority       0.67      0.40      0.50         5
+          appealtoemotion       0.74      0.49      0.59        47
+ causaloversimplification       0.46      0.67      0.55         9
+            cherrypicking       0.80      0.67      0.73         6
+        circularreasoning       0.00      0.00      0.00         2
+                    doubt       0.50      0.18      0.27        11
+  evadingtheburdenofproof       0.65      0.50      0.56        22
+             falseanalogy       1.00      0.27      0.43        11
+             falsedilemma       0.25      0.33      0.29         3
+               flagwaving       0.62      0.38      0.48        13
+      hastygeneralization       0.73      0.38      0.50        21
+           loadedlanguage       0.80      0.67      0.73        55
+    namecallingorlabeling       0.00      0.00      0.00         0
+   namecallingorlabelling       0.74      0.47      0.57        30
+               redherring       0.88      0.41      0.56        17
+            slipperyslope       1.00      0.43      0.60         7
+                   slogan       0.47      0.78      0.58         9
+                 strawman       0.78      0.78      0.78         9
+thoughtterminatingcliches       1.00      0.20      0.33         5
+ thoughtterminatingcliché       0.00      0.00      0.00         0
+                vagueness       0.50      0.13      0.21        38
+
+                micro avg       0.66      0.45      0.53       337
+                macro avg       0.57      0.38      0.43       337
+             weighted avg       0.68      0.45      0.52       337
+              samples avg       0.60      0.48      0.51       337

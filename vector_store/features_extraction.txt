@@ -1,0 +1,191 @@
+Sei un rilevatore di features. 
+Il tuo compito è quello di analizzare un commento social e restituire il seguente JSON. 
+
+  "utilizzo_di_emozioni": { "type": "boolean", "description": "Il post fa leva su emozioni (paura, rabbia, disgusto, pietà, orgoglio...)."},
+    "semplificazione": { "type": "boolean", "description": "Riduzione eccessiva di un tema complesso a cause/soluzioni semplicistiche." },
+    "ragionamento_tautologico": { "type": "boolean", "description": "Conclusione che ripete o presuppone la premessa (circolarità)." },
+    "dubbio": { "type": "boolean", "description": "Il post solleva dubbi/sospetti senza affermare direttamente." },
+    "mancata_giustificazione": { "type": "boolean", "description": "Affermazione di fatto priva di prove/citazioni verificabili." },
+    "analogie": { "type": "boolean", "description": "Uso di analogie/comparazioni a supporto dell'argomento." },
+    "patriottismo": { "type": "boolean", "description": "Appello a identità nazionale/senso di appartenenza (flag-waving)." },
+    "generalizzazione": { "type": "boolean", "description": "Generalizzazioni su gruppi/eventi (tutti/sempre/mai, stereotipi)." },
+    "parolacce": { "type": "boolean", "description": "Presenza di volgarità/insulti crudi, anche censurati o mascherati." },
+    "etichettatura": {
+      "type": "array",
+      "description": "Parole/epiteti etichettanti (es. 'fascisti', 'buonisti', 'no-vax').",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": ".*\\S.*"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "argomenti_irrilevanti": {
+      "type": "array",
+      "description": "Parole/frasi ritenute fuori tema rispetto all'argomento del post (red herring).",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": ".*\\S.*"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "slogan": {
+      "type": "array",
+      "description": "Slogan individuati (frasi brevi/imperative/mnemoniche, spesso con hashtag/maiuscole).",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": ".*\\S.*"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "scoraggiamento": {
+      "type": "boolean",
+      "description": "Linguaggio che delegittima o scoraggia il dissenso/il pensiero alternativo."
+    },
+    "termini_ambigui": {
+      "type": "array",
+      "description": "Termini vaghi/indefiniti (es. 'molti', 'qualcuno', 'a volte', 'si dice').",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": ".*\\S.*"
+      },
+      "uniqueItems": true,
+      "default": []
+    }
+
+Spiegazione di ciascuna features
+
+1) attacco_personale : bool
+
+Definizione: il post colpisce la persona (carattere, intelligenza, moralità, origine) invece delle sue idee/argomenti.
+Metti True se: ci sono insulti/derisioni rivolti a individui o gruppi specifici (“sei un idiota”, “i soliti incapaci”).
+Esempi: “Che schifo, sei un buffone”; “I giornalisti sono imbecilli”.
+Non includere: critica dura ma mirata alle azioni/idee (“questa proposta è inefficace perché…”).
+Estr.: dizionario insulti, 2ª persona/nomi propri + aggettivi denigratori, emoji/hashtag dispregiativi.
+
+2) autorità : list[string]
+
+Definizione: entità usate come “fonte” o “garanzia” per sostenere un punto.
+Metti i nomi estratti (persone, istituzioni, documenti).
+Esempi: “Secondo l’OMS…”, “Papa Francesco ha detto…”, “Studio Ipsos…”.
+Non includere: citazioni vaghe senza referente (“gli esperti dicono”).
+Estr.: NER (persone/organizzazioni), trigger “secondo/come afferma/rapporto/sondaggio”.
+
+3) utilizzo_di_emozioni : bool
+
+Definizione: linguaggio che mira a suscitare paura, rabbia, disgusto, orgoglio, pietà, ecc.
+True se: prevalgono termini emotivi/valoriali rispetto a dati/argomenti.
+Esempi: “Fa schifo”, “vergogna!”, “terrificante”, “commovente”.
+Non includere: toni neutri con dati.
+Estr.: lessici emozionali (paura/rabbia/disgusto/orgoglio), punteggi VADER/NRC sopra soglie; molti !, emoji affettive.
+
+4) semplificazione : bool
+
+Definizione: riduzione eccessiva di un tema complesso a cause/soluzioni semplicistiche.
+True se: “basta fare X”, “il problema è solo Y”, dicotomie nette su temi intricati.
+Esempi: “Per risolvere il clima basta piantare alberi”.
+Non includere: sintesi legittima che riconosce limiti/condizioni.
+Estr.: pattern “basta / è solo / tutto dipende da / la soluzione è”.
+
+5) ragionamento_tautologico : bool
+
+Definizione: conclusione coincide con la premessa o la assume (“è vero perché è vero”).
+True se: circolarità linguistica (“X è sbagliato perché è inaccettabile”; “i criminali sono cattivi perché delinquono”).
+Non includere: definizioni tecniche.
+Estr.: equivalenze sinonimiche premessa→conclusione; pattern “perché è [stesso concetto]”.
+
+6) dubbio : bool
+
+Definizione: il post solleva incertezze/sospetti senza affermare direttamente.
+True se: domande retoriche, marcatori di incertezza (“forse, chissà, davvero?”).
+Esempi: “Siamo sicuri che…?”, “Mah…”.
+Non includere: domande informative con richiesta di fonte.
+Estr.: “?”, “forse”, “mah”, “chissà”, “non è che…”, “davvero?”.
+
+7) mancata_giustificazione : bool
+
+Definizione: si presenta un “fatto” senza supporto (dati, fonti, esempi verificabili).
+True se: affermazioni categoriali (percentuali, numeri, accuse) senza fonte.
+Esempi: “È boom di migranti infetti” (senza dati/fonte).
+Non includere: quando è citata una fonte concreta o un link coerente.
+Estr.: claim con numeri/assoluti + assenza di citazioni/URL/entità fonte.
+
+8) analogie : bool
+
+Definizione: confronto esplicito tra due cose per argomentare.
+True se: “come”, “è come se”, “è pari a”, metafore comparate.
+Esempi: “Gestire i migranti è come aprire i rubinetti”.
+Non includere: metafore decorative non usate come prova.
+Estr.: pattern comparativi (“come/allo stesso modo/pari a”).
+
+9) patriottismo : bool
+
+Definizione: appello all’identità nazionale/comunitaria per giustificare una posizione.
+True se: bandiere, patria, orgoglio nazionale, “noi italiani”, “onore ai nostri”.
+Esempi: “Italiani unitevi!”, “difendiamo la patria”.
+Non includere: semplice menzione geografica neutra.
+Estr.: lessico patriottico, tricolore, emoji bandiera, hashtag (#patria, #tricolore).
+
+10) generalizzazione : bool
+
+Definizione: estende da pochi casi a un insieme ampio (tutti/sempre/mai).
+True se: quantificatori universali e stereotipi su gruppi.
+Esempi: “I politici sono tutti corrotti”; “Sempre la stessa storia”.
+Non includere: dati con campionamento esplicito.
+Estr.: “tutti/sempre/mai/nessuno”, “gli X sono Y”.
+
+11) parole_forti : bool
+
+Definizione: presenza di volgarità/insulti crudi o parole dal forte significato.
+True se: lemmi da lista volgare (anche forme mascherate: “m***a”).
+Non includere: citazioni pulite o contesti metalinguistici (“la parola ‘…’”).
+Estr.: dizionario profanità + normalizzazione (censura, leetspeak).
+
+12) etichettatura : list[string]
+
+Definizione: etichette/nomignoli usati per ridurre la complessità dell’avversario.
+Metti le etichette trovate (singoli token o bigrammi).
+Esempi: “fascisti”, “razzisti”, “pidioti”, “no-vax”, “buonisti”.
+Non includere: denominazioni ufficiali neutre (“Partito Democratico”).
+Estr.: lessico di label politiche/dispregiative, suffissi produttivi (“-isti”, “-oni”, “-acci”).
+
+13) argomenti_irrilevanti : list[string]
+
+Definizione: elementi che spostano l’attenzione dal tema (red herring).
+Metti le frasi/keyword irrilevanti rispetto al topic del post.
+Esempi: in un post sulla sanità: “e poi la plastictax…”.
+Non includere: contesto minimo necessario.
+Estr.: modello di rilevanza (embedding) tra post_text e post_topic_keywords; estrai n-gram a bassa similarità.
+
+14) slogan : list[string]
+
+Definizione: frasi brevi, mnemoniche, imperative/ritmiche usate come richiamo.
+Metti gli slogan individuati (tipicamente tutto maiuscolo/emoji/hashtag).
+Esempi: “Basta tasse!”, “Prima gli italiani”, “Avanti così”.
+Non includere: titoli descrittivi lunghi.
+Estr.: frasi corte (<6 parole), imperativi (“basta”, “via”, “stop”), MAIUSCOLO, hashtag politici.
+
+15) scoraggiamento : bool
+
+Definizione: linguaggio che mira a zittire/deridere opinioni mainstream o a disincentivare il dissenso.
+True se: “solo un idiota può pensare…”, “è inutile discutere”, “smettetela!”.
+Non includere: critica argomentata.
+Estr.: pattern di delegittimazione (“solo un/chiunque capisce che…”, “non ha senso parlare di…”).
+
+16) termini_ambigui : list[string]
+
+Definizione: parole vaghe/indefinite che lasciano margine interpretativo.
+Metti i termini rilevati.
+Esempi: “molti”, “parecchi”, “qualcuno”, “in genere”, “a volte”, “si dice”, “la gente”.
+Non includere: quantificatori con valore numerico chiaro.
+Estr.: lista di vaghezze + POS tags (determinanti indefiniti, quantificatori non numerici).
+
+ora dato il seguente post, restituisci il JSON:
+
+input= {commento_da_analizzare}

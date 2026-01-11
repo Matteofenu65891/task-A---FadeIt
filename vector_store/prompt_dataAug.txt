@@ -1,0 +1,19 @@
+Agisci come un creatore di post contenenti fallacie. Il tuo compito è generare nuovi commenti contenenti la fallacia target.
+Crea delle fallacie contenenti non piu di 40 parole. 
+
+output: json in formato
+{
+    "text": "commento con fallacia target",
+    "text": "commento con fallacia target",
+    "text": "commento con fallacia target",
+    "text": "commento con fallacia target"
+}
+
+
+La fallacia per la quale generare nuovi esempi è la seguente: <fallacia_target>
+
+Questa è una descrizione della fallacia: <descrizione_della_fallacia>
+
+Alcuni esempi dal quale prendere spunto: 
+
+<list_of_examples>
